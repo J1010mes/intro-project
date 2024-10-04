@@ -11,6 +11,18 @@ document.addEventListener( "DOMContentLoaded", async function() {
     } )
   } )
 
+  const closetable = document.querySelectorAll(".closeTable")
+  closetable.forEach( element => {
+    element.addEventListener( "click", ( e ) => {
+      e.preventDefault()
+      if (document.getElementById( "people" ).style.display == "none") {
+        document.getElementById( "people" ).style.display = "block"
+      }
+      else {
+        document.getElementById( "people" ).style.display = "none"
+      }
+    } )
+  } )
   const formelements = document.querySelectorAll( "form" )
   formelements.forEach( element => {
     element.addEventListener( "submit", ( e ) => {
@@ -28,6 +40,7 @@ document.addEventListener( "DOMContentLoaded", async function() {
 /**
  * Hide all divs with class container and show main content
  */
+
 function closallforms() {
   document.querySelectorAll( "div.container" ).forEach( ( element ) => {
     // @ts-ignore
@@ -38,7 +51,7 @@ function closallforms() {
 
 /**
  * Show form by id name
- * @param { string } formid 
+ * @param { string } formid
  */
 export function showform( formid, onsubmit ) {
   document.getElementById( "content" ).style.display = "none"
@@ -50,8 +63,8 @@ export function showform( formid, onsubmit ) {
 }
 
 /**
- * 
- * @param { string } formitemid 
+ *
+ * @param { string } formitemid
  */
 export function getformfieldvalue( formitemid ) {
   // @ts-ignore (it does!)
@@ -59,7 +72,7 @@ export function getformfieldvalue( formitemid ) {
 }
 
 /**
- * 
+ *
  * @param { string } formitemid
  * @param { string } value
  */
@@ -70,8 +83,8 @@ export function setformfieldvalue( formitemid, value ) {
 
 
 /**
- * 
- * @param { string } formid 
+ *
+ * @param { string } formid
  */
 export function clearform( formid ) {
   const form = document.getElementById( formid )
@@ -81,7 +94,7 @@ export function clearform( formid ) {
 }
 
 /**
- * 
+ *
  * @param { string } formid
  * @returns { HTMLTableSectionElement }
  */
@@ -90,11 +103,11 @@ export function gettablebody( formid ) {
 }
 
 /**
- * 
- * @param { string } formid 
+ *
+ * @param { string } formid
  */
 export function cleartablerows( formid ) {
-  
+
   const table = document.getElementById( formid )
 
   const rows = table.getElementsByTagName( "tr" )
