@@ -16,7 +16,6 @@ document.addEventListener( "DOMContentLoaded", async function() {
  * @returns { Promise< object > }
  */
 async function fetchpeople() {
-  console.log('fetchpeople')
   return await getdata( "people" )
 }
 
@@ -27,7 +26,6 @@ async function fetchpeople() {
  * @returns { Promise< object > }
  */
 async function addperson( name, email, notes ) {
-  console.log('addperson')
   await putdata( "people", { name, email, notes } )
 }
 
@@ -39,11 +37,6 @@ async function addperson( name, email, notes ) {
  * @param { string } notes
  */
 async function updateperson( id, name, email, notes ) {
-  console.log('updateperson')
-  console.log(id)
-  console.log(name)
-  console.log(email)
-  console.log(notes)
   await putdata( "people", { id, name, email, notes } )
 }
 
@@ -65,7 +58,6 @@ async function gopeople() {
  *
  */
 function addpersoninput() {
-  console.log('addpersoninpiut')
 
   clearform( "personform" )
   showform( "personform", async () => {
@@ -81,7 +73,6 @@ function addpersoninput() {
  *
  */
 function editperson( ev ) {
-  console.log('editperson')
 
   clearform( "personform" )
   const personrow = findancestorbytype( ev.target, "tr" )
@@ -103,7 +94,6 @@ function editperson( ev ) {
  * @param { object } person
  */
 export function addpersondom( person ) {
-  console.log('addpersondom')
 
   const table = gettablebody( "peopletable" )
   const newrow = table.insertRow()
