@@ -17,6 +17,7 @@ document.addEventListener( "DOMContentLoaded", async function() {
       e.preventDefault()
       if (document.getElementById( "people" ).style.display == "none") {
         document.getElementById( "people" ).style.display = "block"
+        document.getElementById( "grouper" ).style.background = "rgba(97, 00, 00, 0.9)"
       }
       else {
         document.getElementById( "people" ).style.display = "none"
